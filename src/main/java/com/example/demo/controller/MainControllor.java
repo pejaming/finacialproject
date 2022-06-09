@@ -1,20 +1,29 @@
 package com.example.demo.controller;
 
-import com.example.demo.service.MainService;
+import com.example.demo.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class MainControllor {
 
     @Autowired
-    private MainService mainService;
+    private MemberService memberService;
 
-    @GetMapping("/name")
-    public String getName()
+    @GetMapping("/insert")
+    public String insertName()
     {
-        mainService.insert();
+        memberService.insert();
         return "xxx";
+    }
+
+    @GetMapping("/selectall")
+    public void getName()
+    {
+        List memberList = memberService.selectALL();
+
     }
 }

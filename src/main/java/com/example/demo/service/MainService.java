@@ -16,6 +16,5 @@ public class MainService {
 
     public void insert(){
         jdbcTemplate.execute("INSERT INTO user VALUES ('3', '232', 10);");
-
     }
 }
